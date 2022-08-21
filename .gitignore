@@ -1,0 +1,15 @@
+.DS_Store
+node_modules
+.dev.vars
+/.cache
+/functions/_assets
+/functions/\[\[path\]\].js
+/functions/\[\[path\]\].js.map
+/public/build
+.env
+.dev.vars
+
+/cypress/screenshots
+/cypress/videos
+
+/app/styles/

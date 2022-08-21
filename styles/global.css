@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* || Base - used for default styles like styling tags */
+@layer base{
+  
+}
+/* || Components - used for styling of components example buttons or cards */
+@layer components {
+
+}
+
+/* || Utilities - used for modifying or adding functionality to items/components */
+@layer utilities {
+  
+}

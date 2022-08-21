@@ -1,0 +1,4 @@
+{
+  "pattern": "^(main|develop){1}$|^(feat|fix|build|ci|docs|perf|refactor|revert|style|test)/.+$",
+  "errorMsg": "Branch name must start with 'main' or 'develop' or with 'feat/', 'fix/', 'build/', 'ci/', 'docs/', 'perf/', 'refactor/', 'revert/', 'style/' or 'test/'"
+}

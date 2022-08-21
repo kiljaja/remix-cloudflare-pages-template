@@ -1,0 +1,67 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "prepare": "husky install && npm run build:css",
+    "build": "npm run build:css && remix build",
+    "build:css": "postcss styles --base styles --dir app/styles --env production",
+    "dev:remix": "remix watch",
+    "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public",
+    "dev:css": "postcss styles --base styles --dir app/styles -w",
+    "dev": "remix build && run-p \"dev:*\"",
+    "start": "cross-env NODE_ENV=production npm run dev:wrangler",
+    "lint-staged": "lint-staged",
+    "test": "run-p \"test:*\"",
+    "test:units": "vitest --ui",
+    "test:e2e": "start-server-and-test dev http://localhost:8788 \"npx cypress open\""
+  },
+  "eslintIgnore": [
+    "/node_modules",
+    "/build",
+    "/public/build"
+  ],
+  "dependencies": {
+    "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^1.0.6",
+    "@remix-run/cloudflare": "^1.6.7",
+    "@remix-run/cloudflare-pages": "^1.6.7",
+    "@remix-run/node": "^1.6.8",
+    "@remix-run/react": "^1.6.7",
+    "cross-env": "^7.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.14.1",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@remix-run/dev": "^1.6.7",
+    "@remix-run/eslint-config": "^1.6.7",
+    "@types/react": "^17.0.47",
+    "@types/react-dom": "^17.0.17",
+    "@vitejs/plugin-react": "^2.0.1",
+    "@vitest/ui": "^0.21.1",
+    "cssnano": "^5.1.12",
+    "cypress": "^10.4.0",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "happy-dom": "^6.0.4",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
+    "postcss-preset-env": "^7.7.2",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "start-server-and-test": "^1.14.0",
+    "tailwindcss": "^3.1.7",
+    "typescript": "^4.7.4",
+    "vite-tsconfig-paths": "^3.5.0",
+    "vitest": "^0.21.1",
+    "wrangler": "^2.0.22"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
